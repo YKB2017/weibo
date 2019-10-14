@@ -160,7 +160,7 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
 
         // Illuminate\Translation\TranslationServiceProvider::class,
-        Overtrue\LaravelLang\TranslationServiceProvider::class,
+        Overtrue\LaravelLang\TranslationServiceProvider::class, //中文语言包
 
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
