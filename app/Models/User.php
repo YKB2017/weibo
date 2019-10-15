@@ -40,10 +40,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * 用户模型类完成初始化之后进行加载
+     */
     public static function boot()
     {
         parent::boot();
 
+        // 用户创建时生成 activation_token 字符串
         static::creating(function ($user) {
             $user->activation_token = Str::random(10);
         });
