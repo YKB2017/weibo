@@ -53,9 +53,9 @@ class User extends Authenticatable
         });
     }
 
-    public function statuses()
+    public function article()
     {
-        return $this->hasMany(Status::class);
+        return $this->hasMany(Article::class);
     }
 
     /**

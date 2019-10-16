@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStatusesTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('statuses', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('content')->comment('微博内容');
-            $table->integer('user_id')->index()->comment('用户ID');
+            $table->text('content')->nullable()->comment('微博内容');
+            $table->integer('user_id')->comment('用户ID')->index();
             $table->index(['created_at']);
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('articles');
     }
 }
