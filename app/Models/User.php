@@ -53,6 +53,11 @@ class User extends Authenticatable
         });
     }
 
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
+
     /**
      * 用户头像
      * @param string $size
