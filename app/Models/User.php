@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }
 
+    public function feed()
+    {
+        return $this->article()->orderBy('created_at','desc');
+    }
+
     /**
      * 用户头像
      * @param string $size
